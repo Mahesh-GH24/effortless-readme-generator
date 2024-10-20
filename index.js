@@ -68,54 +68,77 @@ const questions = [
 
 ];
 
-const generateREADME = (data) =>
+//function would take the input response from the user. Then it determines the license badge and inserts the user input at appropriate places
+//and returns the final markdown readme content
+
+const generateREADME = (data) => {
+
+   let licensebadge='';
+   let finalreadmecontent='';
+
+   //logic for License badge
+   if (data.license =='Apache License v2.0')
+   {
+      licensebadge ='[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+   }
+   else if (data.license =='GNU General Public License v3.0')
+   {
+      licensebadge ='[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+   }
+   else if(data.license =='MIT License')
+   {
+      licensebadge='[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+   }
+
+   finalreadmecontent =
    `# ${data.title}
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+   ${licensebadge}
 
-## Description
+   ## Description
 
-${data.description}
+   ${data.description}
 
-## Table of Contents
+   ## Table of Contents
 
-- [Installation](#installation)
-- [Technologies](#Technologies)
-- [Usage](#usage)
-- [Challenges](#challenges)
-- [Tests](#tests)
-- [Future Implementation](#Future-Implementation)
-- [Contributing](#Contributing)
-- [Questions](#questions)
-- [License](#license)
+   - [Installation](#installation)
+   - [Technologies](#Technologies)
+   - [Usage](#usage)
+   - [Challenges](#challenges)
+   - [Tests](#tests)
+   - [Future Implementation](#Future-Implementation)
+   - [Contributing](#Contributing)
+   - [Questions](#questions)
+   - [License](#license)
 
-## Installation
-${data.installation}
+   ## Installation
+   ${data.installation}
 
-## Technologies
-${data.technologies}
+   ## Technologies
+   ${data.technologies}
 
-## Usage
-${data.Usage}
+   ## Usage
+   ${data.Usage}
 
-## Challenges
-${data.challenges}
+   ## Challenges
+   ${data.challenges}
 
-## Tests
-${data.tests}
+   ## Tests
+   ${data.tests}
 
-## Future Implementation
-${data.future}
+   ## Future Implementation
+   ${data.future}
 
-## Contributing
-${data.contributing}
+   ## Contributing
+   ${data.contributing}
 
-## Questions
-My GitHub profile is ${data.github}
-Please contact me at ${data.email}
+   ## Questions
+   My GitHub profile is ${data.github}
+   Please contact me at ${data.email}
 
-## License
-${data.license}`;
-
+   ## License
+   ${data.license}`;
+   return finalreadmecontent;
+}
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
