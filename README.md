@@ -12,7 +12,7 @@ It takes a quite bit of time to write a thorough README.md file and sometimes it
 - [Usage](#usage)
 - [Challenges](#challenges)
 - [Tests](#tests)
-- [Future Implementation](#Future Implementation)
+- [Future Implementation](#Future-Implementation)
 - [Contributing](#Contributing)
 - [Questions](#questions)
 - [License](#license)
