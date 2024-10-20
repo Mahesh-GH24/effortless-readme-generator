@@ -1,6 +1,6 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
-import fs from 'fs';
+import fs, { write } from 'fs';
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -41,7 +41,7 @@ const questions = [
      },
      {
         type: 'input',
-        name: 'future-implementation',
+        name: 'future',
         message: 'Please provide any future ideas' 
      },
      {
@@ -51,7 +51,7 @@ const questions = [
      },
      {
         type: 'input',
-        name: 'github-profile',
+        name: 'github',
         message: 'Please provide your GitHub profile' 
      },
      {
@@ -68,8 +68,66 @@ const questions = [
 
 ];
 
+const generateREADME = (data) =>
+   `# ${data.title}
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+## Description
+
+${data.description}
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Technologies](#Technologies)
+- [Usage](#usage)
+- [Challenges](#challenges)
+- [Tests](#tests)
+- [Future Implementation](#Future-Implementation)
+- [Contributing](#Contributing)
+- [Questions](#questions)
+- [License](#license)
+
+## Installation
+${data.installation}
+
+## Technologies
+${data.technologies}
+
+## Usage
+${data.Usage}
+
+## Challenges
+${data.challenges}
+
+## Tests
+${data.tests}
+
+## Future Implementation
+${data.future}
+
+## Contributing
+${data.contributing}
+
+## Questions
+My GitHub profile is ${data.github}
+Please contact me at ${data.email}
+
+## License
+${data.license}`;
+
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+   // console.log('Printing from writeToFile');
+   // console.log(fileName);
+   // console.log(data.future);
+
+   const readmePageContent = generateREADME(data);
+   fs.writeFile(fileName,readmePageContent, (err) =>
+       err ? console.log(err) : console.log('Successfully created Sample-README.md!')
+    );
+}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -77,7 +135,7 @@ function init() {
     //invoke inquirer and pass the array of questions to the prompt
     inquirer
         .prompt(questions)
-        .then((answers) => console.log(answers.title));
+        .then((answers) => writeToFile('Sample-README.md',answers));
 }
 
 // Function call to initialize app
