@@ -1,0 +1,6 @@
+# Ignore all files within node_modules folder
+node_modules
+
+# Ignore all files within .DS_Store folder (May be Mac?)
+.DS_Store
+
