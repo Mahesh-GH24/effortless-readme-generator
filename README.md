@@ -25,6 +25,8 @@ Javascript, node and npm
 
 ## Usage
 Once the dependencies have been installed,execute the app using the command node index.js to start answering questions regarding your package.Once all of your questions have been answered, a new README.md file would be generated in your local folder.
+Link to walkthru video demonstrating the app functionality is below
+(https://drive.google.com/file/d/1prIgBIWceJbFLnKdSolIub1QQHQLYZaE/view?usp=sharing)
 
 ## Challenges
 Currently the interaction with the user is via command line and not very user friendly
