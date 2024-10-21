@@ -74,7 +74,14 @@ const questions = [
 const generateREADME = (data) => {
 
    let licensebadge='';
+   let githubprofile=''
    let finalreadmecontent='';
+
+   //logic for GitHub Profile
+   if (data.github !="")
+   {
+      githubprofile=`https://github.com/${data.github}`;
+   }
 
    //logic for License badge
    if (data.license =='Apache License v2.0')
@@ -89,6 +96,8 @@ const generateREADME = (data) => {
    {
       licensebadge='[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
    }
+
+   //Form the final README.md content
 
    finalreadmecontent =
    `# ${data.title}
@@ -132,21 +141,22 @@ const generateREADME = (data) => {
    ${data.contributing}
 
    ## Questions
-   My GitHub profile is ${data.github}
+   Please check my GitHub Profile (${githubprofile})  
    Please contact me at ${data.email}
 
    ## License
    ${data.license}`;
+
    return finalreadmecontent;
 }
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-   // console.log('Printing from writeToFile');
-   // console.log(fileName);
-   // console.log(data.future);
-
+  
+   //Pass data to generateREADME function to form the README.md content
    const readmePageContent = generateREADME(data);
+  
+   //Write the README.md content to the file. If error report the error in the console or else report success
    fs.writeFile(fileName,readmePageContent, (err) =>
        err ? console.log(err) : console.log('Successfully created Sample-README.md!')
     );
