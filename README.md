@@ -39,7 +39,7 @@ Upgrade the command line application to user friendly front end application usin
 There are many ways you can contribute from submitting bugs and features to fixing the bug fixes or introduce new features.
 
 ## Questions
-My GitHub profile is https://github.com/Mahesh-GH24
+My GitHub profile is https://github.com/Mahesh-GH24  
 Please contact me at MaheshGunasekaran24@gmail.com
 
 ## License
