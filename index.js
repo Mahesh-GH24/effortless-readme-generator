@@ -126,7 +126,7 @@ const generateREADME = (data) => {
    ${data.technologies}
 
    ## Usage
-   ${data.Usage}
+   ${data.usage}
 
    ## Challenges
    ${data.challenges}
