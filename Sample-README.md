@@ -1,9 +1,9 @@
-# Effortless Readme Generator
-   [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+# effortless readme gen
+   [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
    ## Description
 
-   It takes a lot of time to write a readm.md file
+   readme generator
 
    ## Table of Contents
 
@@ -18,29 +18,29 @@
    - [License](#license)
 
    ## Installation
-   make sure to install inquirer
+   use node index.js
 
    ## Technologies
-   JS, Node and NPM
+   node js
 
    ## Usage
-   undefined
+   use the video uploaded
 
    ## Challenges
-   currently the interaction is via command line
+   none
 
    ## Tests
-   Run the app and ensure the readme.md is accurate
+   test the workflow 
 
    ## Future Implementation
-   Make it user friendly using React 
+   expand the UI 
 
    ## Contributing
-   Please report bugs 
+   help report bugs
 
    ## Questions
-   Please check my GitHub Profile (https://github.com/Mahesh-GH24)  
-   Please contact me at MaheshGunasekaran24@gmail.com
+   Please check my GitHub Profile (https://github.com/Mahesh24)  
+   Please contact me at Mahesh.Gunasekaran24@gmail.com
 
    ## License
-   GNU General Public License v3.0
+   Apache License v2.0
